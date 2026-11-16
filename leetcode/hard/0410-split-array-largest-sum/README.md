@@ -45,9 +45,9 @@ The best way is to split it into [1,2,3] and [4,5], where the largest sum among 
 ## Solution
 
 **Language:** C++  
-**Runtime:** 0 ms (beats 100.00%)  
-**Memory:** 10.3 MB (beats 85.16%)  
-**Submitted:** 2026-11-16T13:07:33.535Z  
+**Runtime:** 0 ms  
+**Memory:** 8.3 MB  
+**Submitted:** 2026-11-16T13:08:05.249Z  
 
 ```cpp
 class Solution {
@@ -57,6 +57,7 @@ public:
         int std = 1, sum = 0;
         for(int i = 0; i < num.size(); i++)
         {
+            if(num[i] > mid) return false;
 
             if(sum + num[i] <= mid)
             {
