@@ -1,0 +1,44 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	
+	int t; std::cin >> t;
+	while(t--)
+	{
+	        int n;
+	        cin >> n;
+	        std::vector<int> v(n+1);
+	        for(int i = 1; i <= n; i++)
+	        {
+	                cin >> v[i];
+	        }
+	        long long ans = 0;
+	       // v[1] = 0;
+	
+	        vector<int> inc(n+5,0);
+	        
+	        for(int i = 1; i <= n; i++)
+	        {
+	                inc[i]+=inc[i-1];
+	                
+	                v[i]+=inc[i];
+	                
+	                int move = std::min(v[i], n-i);
+	                
+	                ans+=move;
+	                
+	                int l = i+1,r = i+move;
+	                
+	                inc[l]++, inc[r+1]--;
+	        }
+	        
+	        cout << ans << endl;
+	
+	}
+	
+	
+	
+	return 0;
+
+}
