@@ -90,13 +90,19 @@ Output
 
 ## Solution
 
-**Language:** plain_text  
+**Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-11-18T15:24:32.213Z  
+**Submitted:** 2026-11-18T15:24:40.032Z  
 
-```plain_text
-# cook your dish here
+```c_cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	// your code goes here
+
+}
 
 ```
 
