@@ -64,16 +64,16 @@ The maximum number of products given to any store is max(100000) = 100000.
 ## Solution
 
 **Language:** C++  
-**Runtime:** 102 ms (beats 7.23%)  
-**Memory:** 88.6 MB (beats 10.94%)  
-**Submitted:** 2026-11-18T13:16:43.528Z  
+**Runtime:** 64 ms (beats 15.63%)  
+**Memory:** 88.5 MB (beats 10.94%)  
+**Submitted:** 2026-11-18T13:21:56.982Z  
 
 ```cpp
 class Solution {
 public:
-    long long isValid(vector<int>& products, int mid)
+    int isValid(vector<int>& products, int mid)
     {
-        long long pro = 0, sum = 0;
+        int pro = 0, sum = 0;
 
         for(int i = 0; i < products.size(); i++)
         {
@@ -84,12 +84,12 @@ public:
         return pro;
     }
     int minimizedMaximum(int n, vector<int>& products) {
-        long long st = 1, end = accumulate(products.begin(),products.end(),0LL), ans = 0;
+        int st = 1, end = *max_element(products.begin(),products.end()) , ans = 0;
         
 
         while(st <= end)
         {
-            long long mid = (st + end)/2;
+            int mid = (st + end)/2;
 
             if(isValid(products,mid) <= n)
             {
