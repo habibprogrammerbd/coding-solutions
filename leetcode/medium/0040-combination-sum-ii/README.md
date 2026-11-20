@@ -52,8 +52,8 @@ Output:
 
 **Language:** C++  
 **Runtime:** 0 ms  
-**Memory:** 8.5 MB  
-**Submitted:** 2026-11-20T15:24:54.910Z  
+**Memory:** 8.6 MB  
+**Submitted:** 2026-11-20T15:26:41.786Z  
 
 ```cpp
 class Solution {
@@ -65,7 +65,7 @@ public:
         {
             if(tar == 0)
             {
-                sort(curr.begin(),curr.end());
+                // sort(curr.begin(),curr.end());
 
                 if(st.find(curr) == st.end())
                 {
@@ -78,7 +78,7 @@ public:
 
         if(tar == 0)
         {
-            sort(curr.begin(),curr.end());
+            // sort(curr.begin(),curr.end());
 
             if(st.find(curr) == st.end())
             {
