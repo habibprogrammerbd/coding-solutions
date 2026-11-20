@@ -7,7 +7,7 @@ public:
         {
             if(tar == 0)
             {
-                sort(curr.begin(),curr.end());
+                // sort(curr.begin(),curr.end());
 
                 if(st.find(curr) == st.end())
                 {
@@ -20,7 +20,7 @@ public:
 
         if(tar == 0)
         {
-            sort(curr.begin(),curr.end());
+            // sort(curr.begin(),curr.end());
 
             if(st.find(curr) == st.end())
             {
