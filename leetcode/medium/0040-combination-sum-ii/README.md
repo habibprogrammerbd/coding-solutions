@@ -51,57 +51,38 @@ Output:
 ## Solution
 
 **Language:** C++  
-**Runtime:** 0 ms  
-**Memory:** 8.6 MB  
-**Submitted:** 2026-11-20T15:26:41.786Z  
+**Runtime:** 3 ms (beats 30.85%)  
+**Memory:** 13.9 MB (beats 78.81%)  
+**Submitted:** 2026-11-22T16:32:18.626Z  
 
 ```cpp
 class Solution {
 public:
-    set<vector<int>> st;
-    void getAllcom(int idx, vector<vector<int>>& ans, vector<int>& curr , int tar, vector<int>& can)
+    void getAllcom(int idx, vector<vector<int>>& ans, vector<int>& curr, int tar, vector<int>& can)
     {
-        if(can.size() == idx || tar < 0)
+        if (tar == 0)
         {
-            if(tar == 0)
-            {
-                // sort(curr.begin(),curr.end());
-
-                if(st.find(curr) == st.end())
-                {
-                    ans.push_back(curr);
-                    st.insert(curr);
-                }
-            }
+            ans.push_back(curr);
             return;
         }
 
-        if(tar == 0)
+        for (int i = idx; i < can.size(); i++)
         {
-            // sort(curr.begin(),curr.end());
+            if (i > idx && can[i] == can[i - 1]) continue; 
+            if (can[i] > tar) break;                      
 
-            if(st.find(curr) == st.end())
-            {
-                ans.push_back(curr);
-                st.insert(curr);
-            }
+            curr.push_back(can[i]);
+            getAllcom(i + 1, ans, curr, tar - can[i], can); 
+            curr.pop_back();
         }
-
-        curr.push_back(can[idx]);
-
-        getAllcom(idx +1, ans, curr, tar - can[idx], can);
-
-        curr.pop_back();
-        
-        getAllcom(idx +1, ans, curr, tar, can);
     }
 
-    vector<vector<int>> combinationSum2(vector<int>& candidates, int target) {
+    vector<vector<int>> combinationSum2(vector<int>& candidates, int target)
+    {
         vector<vector<int>> ans;
         vector<int> curr;
-        // sort(candidates.begin(), candidates.end());
+        sort(candidates.begin(), candidates.end());
         getAllcom(0, ans, curr, target, candidates);
-
         return ans;
     }
 };
