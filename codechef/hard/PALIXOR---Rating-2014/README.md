@@ -63,7 +63,7 @@ Output
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-11-23T08:32:40.429Z  
+**Submitted:** 2026-11-23T08:37:01.059Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
@@ -119,7 +119,6 @@ inline void NO() { cout << "NO\n"; }
 // ---------------- Solve ----------------
 const int maxN = (1LL << 15);
 
-
 vector<int> allisPal;
 
 bool isPal(int n)
@@ -142,7 +141,7 @@ void maxNallPal()
     }
 }
 
-int mainisPal(vector<int> &v, map<int,int> & mp)
+int mainisPal(vector<int> &v, unordered_map<int, int> &mp)
 {
     int ans = 0;
 
@@ -154,12 +153,12 @@ int mainisPal(vector<int> &v, map<int,int> & mp)
 
             if (mp.find(x) != mp.end())
             {
-                ans+=mp[x];
+                ans += mp[x];
             }
         }
     }
 
-    return (ans + v.size())/2;
+    return (ans + v.size()) / 2;
 }
 
 void solve()
@@ -167,14 +166,14 @@ void solve()
     int n;
     cin >> n;
     vi v(n);
-    map<int, int> mp;
+    unordered_map<int, int> mp;
     fl(i, n)
     {
         cin >> v[i];
         mp[v[i]]++;
     }
 
-    cout << mainisPal(v,mp) << endl;
+    cout << mainisPal(v, mp) << endl;
 }
 
 signed main()
