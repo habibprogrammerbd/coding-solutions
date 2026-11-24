@@ -74,7 +74,7 @@ $7\cdot 5 = 35$, so this is a valid solution.
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-11-24T09:09:14.570Z  
+**Submitted:** 2026-11-24T09:13:04.280Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
