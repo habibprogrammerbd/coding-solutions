@@ -66,7 +66,7 @@ Output
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-11-25T15:06:46.866Z  
+**Submitted:** 2026-11-25T15:24:26.464Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
@@ -122,22 +122,22 @@ inline void NO() { cout << "NO\n"; }
 // ---------------- Solve ----------------
 void solve()
 {
-    ll n;
+    int n;
     cin >> n;
 
     vi v(n);
     fl(i, n) cin >> v[i];
 
-    ll mx = *max_element(v.begin(), v.end());
+    int mx = *max_element(v.begin(), v.end());
 
-    ll sum = accumulate(v.begin(), v.end(), 0LL);
+    int sum = accumulate(v.begin(), v.end(), 0);
 
-    ll x = sum - mx;
+    int x = sum - mx;
 
     fl(i, n)
     {
-        ll z = max(mx, 2 * v[i]);
-        ll y = sum + v[i];
+        int z = max(mx, 2 * v[i]);
+        int y = sum + v[i];
 
         x = max(x, y - z);
     }
