@@ -60,7 +60,7 @@ YES
 **Language:** c_cpp  
 **Runtime:** N/A  
 **Memory:** N/A  
-**Submitted:** 2026-11-25T14:42:07.308Z  
+**Submitted:** 2026-11-25T15:06:34.341Z  
 
 ```c_cpp
 #include <bits/stdc++.h>
@@ -98,7 +98,6 @@ typedef vector<ll> vll;
 typedef vector<pll> vpll;
 #define vvi vector<vector<int>>
 
-
 // ---------------- Debug (local only) ----------------
 #ifndef ONLINE_JUDGE
 #define debug(x) cerr << #x << " = " << (x) << '\n'
@@ -117,27 +116,40 @@ inline void NO() { cout << "NO\n"; }
 // ---------------- Solve ----------------
 void solve()
 {
-    int n, k;
-    cin >> n >> k;
+    ll n;
+    cin >> n;
 
-    int x = n - k;
-    if(x >= 0 && x <= k) YES();
-    else NO();
+    vi v(n);
+    fl(i, n) cin >> v[i];
+
+    ll mx = *max_element(v.begin(), v.end());
+
+    ll sum = accumulate(v.begin(), v.end(), 0LL);
+
+    ll x = sum - mx;
+
+    fl(i, n)
+    {
+        ll z = max(mx, 2 * v[i]);
+        ll y = sum + v[i];
+
+        x = max(x, y - z);
+    }
+
+    cout << x << endl;
 }
 
 signed main()
 {
     fast_io
 
-    
-    int t;
+        int t;
     cin >> t;
     while (t--)
     {
         solve();
     }
-    
- 
+
     return 0;
 }
 ```
