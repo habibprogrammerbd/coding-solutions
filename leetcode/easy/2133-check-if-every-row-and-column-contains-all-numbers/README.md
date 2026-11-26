@@ -43,9 +43,9 @@ Hence, we return false.
 ## Solution
 
 **Language:** C++  
-**Runtime:** 0 ms  
-**Memory:** 8.2 MB  
-**Submitted:** 2026-11-26T08:41:18.428Z  
+**Runtime:** 7 ms (beats 74.40%)  
+**Memory:** 39.2 MB (beats 72.30%)  
+**Submitted:** 2026-11-26T08:41:34.931Z  
 
 ```cpp
 class Solution {
