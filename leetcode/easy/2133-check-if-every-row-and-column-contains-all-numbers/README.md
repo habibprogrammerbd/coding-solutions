@@ -43,42 +43,37 @@ Hence, we return false.
 ## Solution
 
 **Language:** C++  
-**Runtime:** 180 ms (beats 17.07%)  
-**Memory:** 95.7 MB (beats 20.13%)  
-**Submitted:** 2026-11-26T08:23:36.363Z  
+**Runtime:** 0 ms  
+**Memory:** 8.2 MB  
+**Submitted:** 2026-11-26T08:41:18.428Z  
 
 ```cpp
 class Solution {
 public:
     bool checkValid(vector<vector<int>>& mat) {
-        unordered_map<int, int> mp;
-        int x = mat[0].size();
-        for(int i = 1; i <= x; i++)
-            mp[i]++;
+       
+        int sz = mat[0].size();
 
-        for(int i = 0; i < x; i++)
+        for(int i = 0; i < sz; i++)
         {
-            unordered_map<int,int> mp1;
-            unordered_map<int,int> mp2;
-            for(int j = 0; j < x; j++)
+            vector<bool> find_one(sz, false);
+            vector<bool> find_two(sz, false);
+            for(int j = 0; j < sz; j++)
             {
                 int val = mat[i][j];
-                mp1[val]++;
+                find_one[val -1] = true;
             }
 
-            for(int j = 0; j < x; j++)
+            for(int j = 0; j < sz; j++)
             {
                 int val = mat[j][i];
-                mp2[val]++;
+                find_two[val -1] = true;
             }
 
-            if((mp != mp1) || (mp != mp2))
+            for(int k = 0; k < sz; k++)
             {
-                return false;
+                if((find_one[k] == false) || (find_two[k] == false)) return false;
             }
-
-            mp1.clear();
-            mp2.clear();
         }  
 
         return true;  
